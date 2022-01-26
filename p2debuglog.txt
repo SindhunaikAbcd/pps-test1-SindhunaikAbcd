@@ -1,0 +1,74 @@
+(gdb) b main
+Breakpoint 1 at 0x82c: file p2final.c, line 23.
+(gdb) r
+Starting program: /home/runner/pps-test1-SindhunaikAbcd/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2final.c:23
+23    x=input();
+(gdb) s
+input () at p2final.c:3
+3   {
+(gdb) n
+4     printf("enter the number\n");
+(gdb) n
+enter the number
+6     scanf("%d",&a);
+(gdb) n
+5
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p2final.c:24
+24    y=input();
+(gdb) p x
+$1 = 5
+(gdb) s
+input () at p2final.c:3
+3   {
+(gdb) n
+4     printf("enter the number\n");
+(gdb) n
+enter the number
+6     scanf("%d",&a);
+(gdb) n
+n
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p2final.c:25
+25    z=add(x,y);
+(gdb) p y
+$2 = 5
+(gdb) s
+add (a=5, b=5) at p2final.c:12
+12    c=a+b;
+(gdb) n
+13      return c;
+(gdb) n
+14  }
+(gdb) n
+main () at p2final.c:26
+26    output(x,y,z);
+(gdb) s
+output (a=5, b=5, sum=10) at p2final.c:17
+17    printf("sum of %d+%d is %d",a,b,sum);
+(gdb) n
+18    printf("sum of %d+%d is %d\n",a,b,sum);
+(gdb) n
+sum of 5+5 is 10sum of 5+5 is 10
+19  }
+(gdb) n
+main () at p2final.c:27
+27    return 0;
+(gdb) p z
+$3 = 10
+(gdb) n
+28  } (gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 88] will be killed.
+
+Quit anyway? (y or n) y
