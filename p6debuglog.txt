@@ -1,36 +1,124 @@
-//programs to find sum of n numbers
-#include<stdio.h>
-int input()
-{
-  int n;
-  printf("enter the value of n=\n");
-  scanf("%d",&n);
-  return n;
-}
-int sum( int n)
-{ int sum = 0;
-for (int i=1;i<=n;i++)
-{
-  sum = sum+i;
-}
-return sum;
-}
+ gcc -g p6final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x857: file p6final.c, line 32.
+(gdb) r
+Starting program: /home/runner/pps-test1-SindhunaikAbcd/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
-void output(int n, int add)
-{
-  printf("sum of\t");
+Breakpoint 1, main () at p6final.c:32
+32    n=input();
+(gdb) s
+input () at p6final.c:4
+4   {
+(gdb) n
+6     printf("enter the value of n=\n");
+(gdb) n
+enter the value of n=
+7     scanf("%d",&n);
+(gdb) n
+5
+8     return n;
+(gdb) n
+9   }
+(gdb) n
+main () at p6final.c:33
+33    add= sum(n);
+(gdb) s
+sum (n=5) at p6final.c:11
+11  { int sum = 0;
+(gdb) n
+12  for (int i=1;i<=n;i++)
+(gdb) n
+14    sum = sum+i;
+(gdb) n
+12  for (int i=1;i<=n;i++)
+(gdb) n
+14    sum = sum+i;
+(gdb) n
+12  for (int i=1;i<=n;i++)
+(gdb) n
+14    sum = sum+i;
+(gdb) n
+12  for (int i=1;i<=n;i++)
+(gdb) n
+14    sum = sum+i;
+(gdb) n
+12  for (int i=1;i<=n;i++)
+(gdb) n
+14    sum = sum+i;
+(gdb) n
+12  for (int i=1;i<=n;i++)
+(gdb) n
+16  return sum;
+(gdb) n
+17  }
+(gdb) n
+main () at p6final.c:34
+34    output( n, add);
+(gdb) s
+output (n=5, add=15) at p6final.c:21
+21    printf("sum of\t");
+(gdb) n
+23    for(int i=1;i<=n;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for(int i=1;i<=n;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for(int i=1;i<=n;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for(int i=1;i<=n;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for(int i=1;i<=n;i++)
+(gdb) n
+25      printf("%d+",i);
+(gdb) n
+23    for(int i=1;i<=n;i++)
+(gdb) n
+27    printf("\b=%d\n",add);
+(gdb) n
+sum of  1+2+3+4+5=15
+28  }
+(gdb) n
+main () at p6final.c:35
+35    return 0;
+(gdb) n
+36  }(gdb) n
+__libc_start_main (main=0x561c3240084f <main>, argc=1, argv=0x7fffc5aeccb8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fffc5aecca8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) q
+A debugging session is active.
 
-  for(int i=1;i<=n;i++)
-  {
-    printf("%d+",i);
-  }
-  printf("\b=%d\n",add);
-}
-int main()
-{
-  int n, add;
-  n=input();
-  add= sum(n);
-  output( n, add);
-  return 0;
-}
+    Inferior 1 [process 474] will be killed.
+
+Quit anyway? (y or n) y
+ ./a.out
+enter the value of n=
+5
+sum of  1+2+3+4+5=15
+ 
+
